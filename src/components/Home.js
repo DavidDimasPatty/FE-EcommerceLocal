@@ -27,7 +27,7 @@ const Home = () => {
 
   return (
     <div>
-      <h1>Welcome to the Home Page</h1>
+      <h1 className="text-info">Welcome to the Home Page</h1>
        {data.data.map((product) => (
           <li key={product.id}>{product.name}</li>
         ))}
