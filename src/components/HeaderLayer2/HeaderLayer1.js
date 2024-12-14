@@ -3,9 +3,10 @@ import react from "react";
 
 const HeaderLayer1= () =>{
     return(
-    <div>
-
+    <div className="d-flex justify-content-center aligns-item-center gap-4">
+        <b><a>Category 1</a></b>
+        <b><a>Category 2</a></b>
     </div>);
 }
 
-return HeaderLayer1;
+export default HeaderLayer1;

@@ -19,6 +19,7 @@ footer {
     height: 100vh;
     transition: transform 0.3s ease, left 0.3s ease;
     -webkit-transition: transform 0.3s ease, left 0.3s ease; /* WebKit */
+    z-index: 9999;
 
 }
 

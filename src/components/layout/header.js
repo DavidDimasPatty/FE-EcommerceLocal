@@ -18,6 +18,12 @@ const Header = () => {
                 <ul>
                     <li>
                         <a href="/" className={`${isMenuOpen ? '' : ''}`}>
+                            <i className={`bi ${isMenuOpen ? '' : 'fs-4 bi-bell'}`}></i>
+                            {isMenuOpen ? 'Notifications' : ''}
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/" className={`${isMenuOpen ? '' : ''}`}>
                             <i className={`bi ${isMenuOpen ? '' : 'fs-4 bi-basket'}`}></i>
                             {isMenuOpen ? 'My Cart' : ''}
                         </a>
