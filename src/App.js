@@ -5,6 +5,7 @@ import Header from "./components/layout/header";
 import Footer from "./components/layout/footer";
 import LeftBar from "./components/layout/leftbar";
 import "../src/assets/style/global.css"
+import DetailProduct from "./components/DetailProduct";
 
 function App() {
   return (
@@ -12,9 +13,10 @@ function App() {
       <Header />
       <div style={{ display: 'flex' }}>
         <LeftBar />
-        <div style={{ flex: 1, padding: '20px' }}>
+        <div style={{ flex: 1, padding: '40px',marginTop:'55px' }}>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/detailProduct" element={<DetailProduct />} />
             <Route path="*" element={<h1>404 Not Found</h1>} />
           </Routes>
         </div>

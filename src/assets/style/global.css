@@ -1,11 +1,13 @@
-body {
-    min-height: 100vh;
-}
+html, body {
+    height: 100%;
+    margin: 0;
+  }
 
 footer {
-    position: absolute;
+    position: fixed;
     bottom: 0px;
     width: 100%;
+    z-index: 1000;
 }
 
 .left-bar {
@@ -72,6 +74,9 @@ footer {
     padding: 10px 30px;
     background-color: #333;
     color: white;
+    position: fixed;
+    width: 100%;
+    z-index: 999;
 }
 
 .logo {

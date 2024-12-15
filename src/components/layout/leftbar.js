@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 function LeftBar() {
-    const [isOpen, setIsOpen] = useState(true); // State untuk membuka/menutup sidebar
+    const [isOpen, setIsOpen] = useState(false); // State untuk membuka/menutup sidebar
   
     const toggleSidebar = () => {
       setIsOpen(!isOpen);

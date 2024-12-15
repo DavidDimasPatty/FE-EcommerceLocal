@@ -6,6 +6,8 @@ const HeaderLayer1= () =>{
     <div className="d-flex justify-content-center aligns-item-center gap-4">
         <b><a>Category 1</a></b>
         <b><a>Category 2</a></b>
+        <b><a>Category 3</a></b>
+        <b><a>Category 4</a></b>
     </div>);
 }
 
