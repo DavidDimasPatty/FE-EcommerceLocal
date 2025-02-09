@@ -47,6 +47,68 @@ footer {
     background-color: #555;
 }
 
+
+.cart-bar {
+    width: 300px;
+    background-color: #333;
+    padding-top: 20px;
+    color: white;
+    position: fixed;
+    top: 0;
+    right: -1200px;
+    height: 100vh;
+    transition: right  0.3s ease;
+    -webkit-transition: right  0.3s ease; /* WebKit */
+    z-index: 9999;
+
+}
+
+.cart-bar.open {
+    right: 0px;
+}
+
+.toogle-cart-bar{
+    padding-top: 20px;
+    color: white;
+    position: fixed;
+    top: 0;
+    right: -1200px;
+    transition: right 0.3s ease;
+    -webkit-transition: right 0.3s ease; /* WebKit */
+    z-index: 9999;
+}
+
+.toogle-cart-bar.open {
+    right: 20px;
+    transform: translateX(0);
+}
+
+.notification-bar{
+    padding-top: 10px;
+    background-color: hsl(0, 1%, 14%);
+    color: white;
+    position: fixed;
+    opacity: 0; /* Awal transparan */
+    visibility: hidden; /* Sembunyikan secara visual */
+    transition: opacity 0.3s ease, visibility 0.3s ease; /* Animasi untuk opacity dan visibility */
+    border-radius: 20px;
+    z-index: 9999;
+    right: 200px;
+    width: 200px;
+    top: 50px;
+}
+
+.notification-bar.open {
+    opacity: 1; /* Tampilkan elemen */
+    visibility: visible; /* Ubah menjadi terlihat */
+}
+
+.toogle-cart-bar a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
+
 .toggle-btn {
     position: absolute;
     top: 13px;
@@ -155,4 +217,10 @@ footer {
         padding: 0px;
         text-align: center;
     }
+}
+
+.hrCustom1{
+        border: none;
+        height: 10px;
+        background-color: white;         
 }

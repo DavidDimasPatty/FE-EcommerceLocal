@@ -5,14 +5,15 @@ import "../assets/style/home.css";
 
 const Home = () => {
   const [data, setData] = useState(null);
+  const [categories, setCategories] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const items = [
-    "https://via.placeholder.com/600x300?text=Slide+1",
-    "https://via.placeholder.com/600x300?text=Slide+2",
-    "https://via.placeholder.com/600x300?text=Slide+3",
+    "https://img.freepik.com/premium-vector/default-image-icon-vector-missing-picture-page-website-design-mobile-app-no-photo-available_87543-11093.jpg",
+    "https://img.freepik.com/premium-vector/default-image-icon-vector-missing-picture-page-website-design-mobile-app-no-photo-available_87543-11093.jpg",
+    "https://img.freepik.com/premium-vector/default-image-icon-vector-missing-picture-page-website-design-mobile-app-no-photo-available_87543-11093.jpg",
   ];
 
   const nextSlide = () => {
@@ -30,8 +31,7 @@ const Home = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:8080/getProducts");
-        console.log(response.data)
+        const response = await axios.get("http://localhost:8080/products");
         setData(response.data);
         setLoading(false);
       } catch (err) {
@@ -40,14 +40,27 @@ const Home = () => {
       }
     };
 
+    const fetchDataCategories = async () => {
+      try {
+        const response = await axios.get("http://localhost:8080/GetAllCategory");
+        setCategories(response.data)
+        setLoading(false);
+      }
+      catch (err) {
+        setError(err);
+        setLoading(false);
+      }
+    }
+
     fetchData();
+    fetchDataCategories();
   }, []);
 
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error.message}</div>;
   return (
     <div>
-      <HeaderLayer1 />
+      <HeaderLayer1 categories={categories}/>
       <div>
         <div className="d-flex justify-content-center align-item-center fs-2 mt-4">
           <h1 className="text-dark">Welcome Customers!</h1>
@@ -68,7 +81,7 @@ const Home = () => {
         </div>
 
         <div className="row mt-4 gap-4 d-flex justify-content-center align-item-center">
-          {data.data.map((product) => (
+          {data.map((product) => (
             <div className="col-md-3">
               <a href="/detailProduct" style={{ textDecoration: 'none' }}>
                 <div className="card card-info">
