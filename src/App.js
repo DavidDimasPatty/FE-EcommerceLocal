@@ -12,7 +12,7 @@ function App() {
     <Router>
       <Header />
       <div style={{ display: 'flex' }}>
-        <LeftBar />
+        {/* <LeftBar /> */}
         <div style={{ flex: 1, padding: '40px',marginTop:'55px' }}>
           <Routes>
             <Route path="/" element={<Home />} />

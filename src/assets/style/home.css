@@ -1,86 +1,129 @@
 .carousel {
-    position: relative;
-    width: 80%;
-    max-width: 600px;
-    margin: auto;
-    margin-top: 30px;
-    overflow: hidden;
-    border: 2px solid #ccc;
-    border-radius: 8px;
-  }
-  
-  .carousel-content {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-    transform: translateX(calc(-100% * var(--current-index)));
-  }
-  
-  .carousel-item {
-    min-width: 100%;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-  }
-  
-  .carousel-item.active {
-    opacity: 1;
-  }
-  
-  .carousel img {
-    width: 100%;
-    height: auto;
-  }
-  
-  .carousel-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-    font-size: 18px;
-    border-radius: 40px;
-    z-index: 90;
-  }
-  
-  .carousel-button.prev {
-    left: 10px;
-  }
-  
-  .carousel-button.next {
-    right: 10px;
-  }
-  
-  .carousel-button:hover {
-    background: rgba(0, 0, 0, 0.8);
+  position: relative;
+  width: 80%;
+  max-width: 600px;
+  margin: auto;
+  margin-top: 30px;
+  overflow: hidden;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+}
+
+.carousel-content {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  transform: translateX(calc(-100% * var(--current-index)));
+}
+
+.carousel-item {
+  min-width: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.carousel-item.active {
+  opacity: 1;
+}
+
+.carousel img {
+  width: 100%;
+  height: auto;
+}
+
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 18px;
+  border-radius: 40px;
+  z-index: 90;
+}
+
+.carousel-button.prev {
+  left: 10px;
+}
+
+.carousel-button.next {
+  right: 10px;
+}
+
+.carousel-button:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.moving-text-container {
+  width: 60%;
+  /* Lebar container */
+  overflow: hidden;
+  /* Menyembunyikan teks di luar container */
+  white-space: nowrap;
+  /* Teks tidak akan terpotong di baris baru */
+  background: #f8f9fa;
+  border: 2px solid #ccc;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  margin: auto;
+}
+
+/* Gaya untuk teks bergerak */
+.moving-text {
+  display: inline-block;
+  padding-left: 100%;
+  /* Agar teks mulai di luar layar */
+  animation: move-text 10s linear infinite;
+  /* Durasi dan pengulangan animasi */
+}
+
+/* Animasi untuk teks */
+@keyframes move-text {
+  from {
+    transform: translateX(0);
+    /* Teks mulai dari kanan */
   }
 
-  .moving-text-container {
-    width: 60%; /* Lebar container */
-    overflow: hidden; /* Menyembunyikan teks di luar container */
-    white-space: nowrap; /* Teks tidak akan terpotong di baris baru */
-    background: #f8f9fa;
-    border: 2px solid #ccc;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    margin: auto;
+  to {
+    transform: translateX(-100%);
+    /* Teks bergerak ke kiri */
   }
-  
-  /* Gaya untuk teks bergerak */
-  .moving-text {
-    display: inline-block;
-    padding-left: 100%; /* Agar teks mulai di luar layar */
-    animation: move-text 10s linear infinite; /* Durasi dan pengulangan animasi */
-  }
-  
-  /* Animasi untuk teks */
-  @keyframes move-text {
-    from {
-      transform: translateX(0); /* Teks mulai dari kanan */
-    }
-    to {
-      transform: translateX(-100%); /* Teks bergerak ke kiri */
-    }
-  }
+}
+
+.carouselBestDeal {
+  width: 100%;
+  overflow: hidden;
+  height: 100%;
+  padding-bottom: 20px;
+}
+
+.carrouselBestDealContent {
+  overflow: hidden;
+  height: 250px;
+}
+
+
+.divBannerBestDeals {}
+
+.divBannerBestDeals img {
+  width: 250px;
+  height: 250px;
+}
+
+.cardBestDeals {
+  height: 100%;
+
+}
+
+.cardImageBestDeals {
+  width: 150px;
+  height: 150px;
+}
+
+.cardImageBestDeals img {
+  width: 150px;
+  height: 150px;
+}
